@@ -18,7 +18,7 @@ const createAgoraClient = ({ onVideoTrack, onUserDisconnected }: any) => {
     codec: 'vp8',
   });
 
-  let tracks;
+  let tracks: any;
 
   const waitForConnectionState = (connectionState: any) => {
     return new Promise((resolve) => {
@@ -96,7 +96,7 @@ export const VideoRoom = () => {
     });
 
     const setup = async () => {
-      const { tracks, uid } = await connect();
+      const { tracks, uid }: any = await connect();
       setUid(uid);
       setUsers(
         (previousUsers) =>
