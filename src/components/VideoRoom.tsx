@@ -21,14 +21,14 @@ const createAgoraClient = ({ onVideoTrack, onUserDisconnected }: any) => {
   let tracks: any;
 
   const waitForConnectionState = (connectionState: any) => {
-    return new Promise((resolve) => {
+    return (resolve: any) => {
       const interval = setInterval(() => {
         if (client.connectionState === connectionState) {
           clearInterval(interval);
           resolve();
         }
       }, 200);
-    });
+    };
   };
 
   const connect = async () => {
